@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log/slog"
 
 	"github.com/jantytgat/go-pslog/pkg/pslog"
@@ -8,5 +9,5 @@ import (
 
 func main() {
 	slog.SetDefault(pslog.New())
-	slog.Info("Hello from PSLOG")
+	slog.Log(context.Background(), pslog.LevelTrace, "Hello from PSLOG")
 }
